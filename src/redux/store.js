@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
+import { persistStore } from "redux-persist";
 
 // catch actions and log it out
 import logger from "redux-logger";
@@ -9,6 +10,8 @@ import rootReducer from "./root-reducer";
 const middelwares = [logger];
 
 // a func get root reducer
-const store = createStore(rootReducer, applyMiddleware(...middelwares));
+export const store = createStore(rootReducer, applyMiddleware(...middelwares));
 
-export default store;
+export const persistor = persistStore(store);
+
+export default { store, persistor };
