@@ -41,6 +41,12 @@ class App extends React.Component {
         });
       }
       setCurrentUser(userAuth);
+
+      // load batch data
+      // addCollectionAndDocuments(
+      //   "collections",
+      //   collectionsArray.map(({ title, items }) => ({ title, items }))
+      // );
     });
   }
 
